@@ -1,0 +1,64 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  https://docs.dclimate.net/docs/intro + github.com/dClimate/dclimate-client-py
+  + github.com/dClimate/dclimate-client-js READMEs
+notes: >-
+  dClimate is a chain-agnostic, decentralized climate information ecosystem.
+  Unlike a conventional REST provider it exposes no public HTTP API surface,
+  API keys, or OAuth; data access is SDK-first over content-addressed storage.
+  These conventions capture the cross-cutting access semantics of the ecosystem.
+access_model:
+  style: sdk-first
+  description: >-
+    Datasets are accessed through the official Python and JavaScript clients
+    rather than a REST API. Clients resolve a dataset to its latest IPFS CID and
+    stream sharded Zarr stores directly, so there is no request/response HTTP
+    envelope to document.
+  transport: IPFS / IPLD (content-addressed), with HTTP gateway fallback
+authentication:
+  scheme: none
+  description: >-
+    No API key or OAuth is required for public dataset access. Data is retrieved
+    from IPFS by content identifier (CID); trust is established by the CID rather
+    than by a bearer credential.
+discovery:
+  standard: STAC (SpatioTemporal Asset Catalog)
+  description: >-
+    Dataset discovery uses a STAC catalog. Datasets are addressed by a
+    (organization, collection, dataset, variant) tuple, e.g. organization=ecmwf,
+    collection=era5, dataset=temperature_2m, variant=finalized.
+  helpers:
+    - list_datasets
+    - list_available_datasets
+selection:
+  description: >-
+    The GeotemporalData / GeoTemporalDataset wrapper provides a chainable
+    geospatial + temporal selection API over the loaded Zarr store.
+  operations:
+    - point (nearest-neighbor lat/lon)
+    - multiple_points
+    - circle (radius-based region)
+    - bounds (rectangular bounding box [west, south, east, north])
+    - time_range (start/end datetimes)
+  variant_handling: >-
+    Multi-variant datasets require an explicit variant; clients can auto-merge
+    finalized and non-finalized data for a continuous time series.
+idempotency:
+  supported: false
+  note: >-
+    Reads are content-addressed and inherently immutable/deterministic (a CID
+    always resolves to the same bytes), but there is no write path and no
+    documented Idempotency-Key contract, so no idempotency pointer is emitted.
+versioning:
+  scheme: semver
+  surface: client SDKs (dclimate-client-py, @dclimate/dclimate-client-js)
+  see: changelog/dclimate-changelog.yml
+observability:
+  description: >-
+    The JS client ships OpenTelemetry hooks for IPFS/Zarr open latency, status,
+    and gateway attribution.
+cross_links:
+  packages: packages/dclimate-packages.yml
+  changelog: changelog/dclimate-changelog.yml
+  domain_security: security/dclimate-domain-security.yml

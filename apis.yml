@@ -1,9 +1,29 @@
 aid: dclimate
 name: dClimate
-description: 'dClimate is a company surfaced as a portfolio company of multicoin-capital and added to
-  the API Evangelist network as a stub for enrichment. Sector: crypto-web3. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  dClimate is a chain-agnostic, decentralized climate information ecosystem that
+  makes it easy for businesses, governments, and builders to find, access, and
+  utilize essential data about the planet. Rather than a conventional REST API,
+  dClimate exposes its weather and climate data SDK-first over content-addressed
+  (IPFS/IPLD) storage: official Python and JavaScript clients resolve datasets
+  from a STAC catalog and stream sharded Zarr stores, requiring no API key or
+  OAuth for public data. Offerings span weather/climate reanalysis and forecast
+  sources such as ECMWF ERA5 and AIFS, a Data Marketplace featuring datasets from
+  providers like NASA and ESA, plus the Aegis and CYCLOPS climate-intelligence
+  platforms. Backed by Multicoin Capital.
 url: https://raw.githubusercontent.com/api-evangelist/dclimate/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: open
+  trial: false
+  try_now: false
+  public: true
+  label: Open access
+  confidence: medium
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://user-images.githubusercontent.com/41392423/173133333-79ef15d0-6671-4be3-ac97-457344e9e958.svg
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -12,10 +32,18 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
 - Crypto Web3
+- Climate Data
+- Weather Data
+- Geospatial
+- Decentralized
+- IPFS
+- Data Marketplace
+- Zarr
+- STAC
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -25,3 +53,36 @@ maintainers:
 common:
 - type: Website
   url: https://dclimate.net
+- type: DeveloperPortal
+  url: https://docs.dclimate.net/docs/intro
+- type: Documentation
+  url: https://docs.dclimate.net/docs/intro
+- type: GettingStarted
+  url: https://docs.dclimate.net/docs/intro
+- type: GitHubOrganization
+  url: https://github.com/dClimate
+- type: Blog
+  url: https://blog.dclimate.net/
+- type: Support
+  url: http://discord.gg/dKC9ADju4y
+- type: TermsOfService
+  url: https://dclimate.net/terms
+- type: PrivacyPolicy
+  url: https://dclimate.net/privacy-policy
+- type: Packages
+  url: packages/dclimate-packages.yml
+- type: SDKs
+  url: packages/dclimate-packages.yml
+- type: ChangeLog
+  url: changelog/dclimate-changelog.yml
+- type: Conventions
+  url: conventions/dclimate-conventions.yml
+- type: LLMsTxt
+  url: llms/dclimate-llms.txt
+- type: DomainSecurity
+  url: security/dclimate-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

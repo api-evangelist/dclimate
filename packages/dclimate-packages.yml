@@ -1,0 +1,62 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/dClimate + PyPI + npm registry
+notes: >-
+  dClimate ships first-party client libraries for accessing its decentralized
+  climate/weather data ecosystem. Access is SDK-first (no public REST API): the
+  clients resolve dataset CIDs from a STAC catalog and stream sharded Zarr stores
+  over IPFS. Python and JavaScript clients are the two official SDKs; py-hamt and
+  jaxray are the first-party foundational libraries they build on.
+packages:
+  - language: python
+    registry: pypi
+    name: dclimate-client-py
+    url: https://pypi.org/project/dclimate-client-py/
+    repo: https://github.com/dClimate/dclimate-client-py
+    install: pip install dclimate-client-py
+    version: 0.5.11
+    requires_python: '>=3.12'
+    license: MIT
+    official: true
+    description: >-
+      Python client for retrieving dClimate GIS Zarr datasets stored on IPFS;
+      uses STAC for dataset discovery and py-hamt for content-addressed Zarr
+      access, with convenience filtering/aggregation helpers.
+  - language: javascript
+    registry: npm
+    name: '@dclimate/dclimate-client-js'
+    url: https://www.npmjs.com/package/@dclimate/dclimate-client-js
+    repo: https://github.com/dClimate/dclimate-client-js
+    install: npm install @dclimate/dclimate-client-js
+    version: 0.5.11
+    license: MIT
+    official: true
+    description: >-
+      JavaScript/TypeScript client for dClimate datasets using jaxray and IPFS
+      stores; dual Node.js + browser bundles, geotemporal selection API, no
+      blockchain dependencies.
+  - language: python
+    registry: pypi
+    name: py-hamt
+    url: https://pypi.org/project/py-hamt/
+    repo: https://github.com/dClimate/py-hamt
+    install: pip install py-hamt
+    version: 3.4.1
+    license: Apache-2.0
+    official: true
+    description: >-
+      HAMT (Hash Array Mapped Trie) key-value mapping on top of content-addressed
+      storage systems; foundational library the Python client uses to access Zarr
+      structures on IPFS/IPLD.
+  - language: javascript
+    registry: npm
+    name: '@dclimate/jaxray'
+    url: https://github.com/dClimate/jaxray
+    repo: https://github.com/dClimate/jaxray
+    install: npm install @dclimate/jaxray
+    license: MIT
+    official: true
+    description: >-
+      A JavaScript/TypeScript implementation similar to xarray for labeled
+      multi-dimensional arrays; powers the JS client's chunked streaming Zarr
+      access.

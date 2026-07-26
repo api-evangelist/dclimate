@@ -1,0 +1,33 @@
+generated: '2026-07-18'
+method: searched
+source: live probes of dclimate.net + docs.dclimate.net
+notes: >-
+  Probed the standard /.well-known/ discovery surface plus /llms.txt on the
+  primary web and docs hosts. None are published (all 404). Absence is valid,
+  recorded data; no WellKnown/SecurityTxt pointer is emitted.
+host: https://dclimate.net
+documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+docs_host: https://docs.dclimate.net
+docs_documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /llms.txt
+    status: 404

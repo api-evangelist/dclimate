@@ -1,0 +1,44 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/dClimate/dclimate-client-py/releases + https://pypi.org/project/dclimate-client-py/
+notes: >-
+  dClimate does not publish a single product-level changelog page. The developer-
+  facing surface is versioned through the official client SDKs, which follow
+  semantic versioning and cut GitHub releases + PyPI/npm publishes. This captures
+  the recent release window of the primary Python client (dclimate-client-py);
+  the JS client (@dclimate/dclimate-client-js) tracks the same 0.5.x line.
+scheme: semver
+current_version: 0.5.11
+subject: dclimate-client-py
+entries:
+  - version: 0.5.11
+    date: '2026-07-10'
+    breaking: false
+    highlights: Latest release of the Python client (matches JS client 0.5.11).
+  - version: 0.5.10
+    date: '2026-07-08'
+    breaking: false
+  - version: 0.5.9
+    date: '2026-06-16'
+    breaking: false
+  - version: 0.5.8
+    date: '2026-06-10'
+    breaking: false
+  - version: 0.5.7
+    date: '2026-06-09'
+    breaking: false
+  - version: 0.5.5
+    date: '2026-05-19'
+    breaking: false
+  - version: 0.5.4
+    date: '2026-03-16'
+    breaking: false
+  - version: 0.5.0
+    date: '2025-11-27'
+    breaking: true
+    highlights: >-
+      0.5.0 minor line introduced the dClimateClient async context-manager
+      interface and STAC-based dataset discovery.
+  - version: 0.4.0
+    date: '2025-11-14'
+    breaking: false
